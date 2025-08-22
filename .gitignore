@@ -1,0 +1,18 @@
+# Ignore virtual environment
+recommender-env/
+
+# Ignore cache/data
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Ignore system files
+.DS_Store
+
+# Ignore Streamlit cache
+.streamlit/
+
+# Ignore environment files
+.env
