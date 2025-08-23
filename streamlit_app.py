@@ -42,7 +42,7 @@ def fallback_recommendations(top_n=5):
 
 def recommend_books(user_id, top_n=5):
     if int(user_id) not in ratings['user_id'].values:
-        print(f"\n⚠️ New user detected. Showing fallback recommendations.")
+        print(f"\n New user detected. Showing fallback recommendations.")
         fallback = fallback_recommendations(top_n)
         return [
             (
@@ -75,7 +75,7 @@ def recommend_books(user_id, top_n=5):
 
 
 # ---------------- UI Layout ------------------
-st.title("📚 Book Recommender")
+st.title("Book Recommender")
 
 user_input = st.text_input("Enter your User ID:", value="276725")
 
@@ -84,6 +84,6 @@ if st.button("Get Recommendations"):
         st.warning("Please enter a valid User ID.")
     else:
         recs = recommend_books(user_input, top_n=5)
-        st.subheader("📖 Recommended Books:")
+        st.subheader("Recommended Books:")
         for i, (book_id, title, rating) in enumerate(recs, 1):
-            st.write(f"{i}. 📚 {title} (Book ID: {book_id}) — ⭐ {rating}")
+            st.write(f"{i}. {title} (Book ID: {book_id}) — {rating}")
